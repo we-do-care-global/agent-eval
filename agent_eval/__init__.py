@@ -190,7 +190,7 @@ class AgentEval:
         try:
             return hashlib.sha256(json.dumps(data, sort_keys=True).encode()).hexdigest()[:16]
         except (TypeError, ValueError):
-            return hashlib.b256(str(data).encode()).hexdigest()[:16]
+            return hashlib.sha256(str(data).encode()).hexdigest()[:16]
 
 
 # Singleton instance for ecosystem-wide use
